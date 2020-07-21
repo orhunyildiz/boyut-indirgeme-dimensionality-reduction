@@ -4,9 +4,11 @@
 # İçindekiler
 1. [Özet](#özet)
 2. [Genel Bilgiler](#genel-bilgiler)
-  - [Giriş](#giriş)
-  - [Tezin Amacı](#tezin-amacı)
-  - [Tezin Organizasyonu](#tezin-organizasyonu)
+   - [Giriş](#giriş)
+   - [Tezin Amacı](#tezin-amacı)
+   - [Tezin Organizasyonu](#tezin-organizasyonu)
+3. [Yöntem](#yöntem)
+   - [Meta-Sezgisel Arama Süreci](#meta-sezgisel-arama-süreci)
 
 # Özet
 
@@ -99,3 +101,19 @@ algoritmasının temel öğeleri olan k-nn sınıflandırıcı ve AGDE algoritma
 sonra önerilen yöntem adım-adım açıklanmıştır. Deneysel çalışma bölümünde ise dört farklı
 probleme ait veri setleri kullanılarak geliştirilen melez algoritmanın bu problemler üzerindeki
 performansı test edilmiştir. Son olarak bu çalışmadan elde edilen sonuçlar değerlendirilmiştir.
+# Yöntem
+  Yöntem bölümünde öncelikle veri madenciliği konusu kısaca ele alınmakta ve sırasıyla
+meta-sezgisel arama süreci, k-nn algoritması, AGDE algoritması ve önerilen yöntem hakkında
+bilgi verilmektedir.
+  ## Meta-Sezgisel Arama Süreci
+  Yapay zekânın bir türü olan Meta-sezgisel Arama (MSA) algoritmalarını geliştirme
+çalışmaları 1950’li yıllara dayanmaktadır. Michigan üniversitesinde Prof. John Holland ve
+öğrencilerinin geliştirdikleri Genetik Algoritma bu çalışmalara hız kazandırmıştır [42]. Son
+yıllarda gerek algoritma geliştirme çalışmalarında gerekse de problemlere tatbik edilmeleri
+hususunda elde edilen başarılar meta-sezgisel algoritmaların önemini giderek artırmaktadır [43-
+47]. MSA algoritmaları yapay zekanın uygulandığı her alanda, tahmin, kümeleme,
+sınıflandırma gibi problemleri çözümlemek için melez algoritmaların geliştirilmesinde ve asıl
+olarak optimizasyon problemlerinin çözümünde yaygın bir şekilde kullanılmaktadırlar.
+Maliyetleri azaltmanın ve verimliliği artırmanın kritik önem kazandığı çağımızda süreçleri ve
+sistemleri optimum şekilde modellemenin etkili yollarından biri olarak meta-sezgisel
+algoritmalara başvurulmaktadır.
