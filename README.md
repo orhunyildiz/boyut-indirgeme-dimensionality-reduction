@@ -2,9 +2,11 @@
 *Sınıflandırma problemleri için meta-sezgisel boyut azaltma aracının tasarımı ve uygulaması (Bitirme Tezi)*
 
 # İçindekiler
-- [Özet](#özet)
-1. [Genel Bilgiler](#genel-bilgiler)
-  - 
+1. [Özet](#özet)
+2. [Genel Bilgiler](#genel-bilgiler)
+  - [Giriş](#giriş)
+  - [Tezin Amacı](#tezin-amacı)
+  - [Tezin Organizasyonu](#tezin-organizasyonu)
 
 # Özet
 
@@ -33,8 +35,8 @@ farklı veri seti üzerinde tatbik edilmiştir. Deneysel çalışmalardan elde e
 tabanlı nitelik seçim yönteminin sınıflandırma problemleri için etkili bir boyut azaltma aracı
 olduğunu göstermektedir.
 
-# 1. Genel Bilgiler
-  ## - Giriş
+# Genel Bilgiler
+  ## Giriş
   Nitelik sayısı fazla ve karmaşıklık düzeyi yüksek yapay zekâ problemleri için etkili
 çözümler geliştirmek zordur. Bu tür zor problemler için bir yapay zekâ çözümü geliştirmeden
 önce problem modelinin en etkili şekilde oluşturulmasına ihtiyaç vardır. Bunun için problemi
@@ -75,4 +77,25 @@ Tez çalışmasında birçok farklı meta-sezgisel yöntem kullanılarak gerçek
 çalışılmaktadır. Bu amaçla melez bir yapay zekâ algoritması geliştirilmiş ve problem uzayı
 bağımsız değişkenleri sayısal veri tipinde olan sınıflandırma problemleri olarak belirlenmiştir.
 Amaç bu tipteki problemlere ait veri setlerini kullanarak sınıflandırma performansını korurken
-nitelik sayısını azaltmaktır (boyut indirgeme). Sınıflandırma algoritması olarak k-en yakın
+nitelik sayısını azaltmaktır (boyut indirgeme). Sınıflandırma algoritması olarak k-en yakın komşu (k-nearest neighbor, k-nn) ve sezgisel k-nn algoritmaları kullanılmıştır. MSA
+algoritması olarak ise güncel ve güçlü bir MSA algoritması olan AGDE kullanılmıştır. Bu
+amaçla geliştirilen boyut indirgeme algoritması bir optimizasyon yöntemi olmanın da ötesinde
+birden fazla algoritmanın bir arada kullanıldığı melez bir yöntemdir. Bu melez algoritma, k-nn
+sınıflandırıcı için en iyi k-değerinin belirlenmesi, sınıflandırma eşik değerinin tanımlanması,
+probleme ait niteliklerin ağırlıklandırılması ve sezgisel sınıflandırma gibi farklı gereksinimlere
+cevap veren yeteneklere sahip olarak geliştirilmiştir. Tez çalışması için ihtiyaç duyulan
+sınıflandırma problemlerine ait veri setleri için de UCI Machine Learning veri havuzu
+kullanılmıştır [30-33].
+  ## Tezin Amacı
+  Tezin amacı, çok boyutlu sınıflandırma problemleri için uygulama alanına bağlı
+kalmaksızın boyut indirgeme işlemini etkili bir şekilde yerine getiren meta-sezgisel
+optimizasyon tabanlı bir boyut indirgeme aracı geliştirmektir. Sınıflandırma problemleri için
+meta-sezgisel tabanlı boyut indirgeme algoritması geliştirilirken boyut azaltıldıktan sonraki
+sınıflandırma başarısının düşmemesi amaçlanmıştır.
+  ## Tezin Organizasyonu
+  Tez çalışması bölümleri sırasıyla, yöntem, deneysel çalışma ve sonuçlar şeklinde
+tasarlanmıştır. Yöntem bölümünde öncelikle, bu çalışmada geliştirilen melez boyut indirgeme
+algoritmasının temel öğeleri olan k-nn sınıflandırıcı ve AGDE algoritması tanıtılmaktadır. Daha
+sonra önerilen yöntem adım-adım açıklanmıştır. Deneysel çalışma bölümünde ise dört farklı
+probleme ait veri setleri kullanılarak geliştirilen melez algoritmanın bu problemler üzerindeki
+performansı test edilmiştir. Son olarak bu çalışmadan elde edilen sonuçlar değerlendirilmiştir.
