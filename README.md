@@ -9,6 +9,7 @@
    - [Tezin Organizasyonu](#tezin-organizasyonu)
 3. [Yöntem](#yöntem)
    - [Meta-Sezgisel Arama Süreci](#meta-sezgisel-arama-süreci)
+   - [k-nn Sınıflandırma Algoritması](#k-nn-sınıflandırma-algoritması)
 
 # Özet
 
@@ -137,7 +138,7 @@ v) Sonlandırma kriteri sağlandı mı?
    - Hayır (Adım iv'e dön)
    - Evet (arama sürecini sonlandır ve en iyi çözüm adayını kaydet)
 ```
-Algoritma 1’de verilen (i, ii, iii ve v) numaralı adımlar bütün MSA algoritmaları için
+   Algoritma 1’de verilen (i, ii, iii ve v) numaralı adımlar bütün MSA algoritmaları için
 aynıdır. (iv) numaralı adım ise tüm MSA için farklıdır. (iv) numaralı adımda arama
 algoritmasına özgü operatörler/işlemler uygulanmaktadır. Arama sürecinin başarısı bu
 operatörlerin yeteneklerine bağlıdır. (iv) numaralı adımda verilen çözüm adayları topluluğunun
@@ -145,3 +146,39 @@ güncellenmesinde temel olarak iki farklı yöntem kullanılmaktadır. Bunlar ç
 arama uzayına normal/gauss dağılımı ile yerleştirilmesi ve rastgele yerleştirilmesidir. MSA
 algoritmaları ile ilgili çalışmalar incelendiğinde bu dağılım tiplerinden biriyle algoritmaların
 geliştirildiği ve test edildiği görülmektedir.
+   ## k-nn Sınıflandırma Algoritması
+   k-nn algoritması uzaklığa dayalı sınıflandırma algoritmasıdır. Sınıflandırma, önceden elde
+ettiğimiz bilgilerin veya verilerin hangi sınıftan olduğu biliniyorsa, yeni gelen verinin hangi
+sınıfa ait olacağının belirlenmesi işlemidir. Uzaklığa dayalı algoritmalardan en bilineni ve en
+yaygın kullanılanıdır. Sınıflandırma yapılırken eldeki verilerin birbirlerine olan uzaklığı veya
+benzerliği kullanılır. Veriler arasındaki mesafe ölçülülerken en çok kullanılan yöntemler Öklit,
+Manhattan ve Minkovski uzaklık metrikleridir. k-nn algoritmasında öncelikle gözlemler
+arasındaki uzaklıklar belirlenir. Gözlemler arasındaki uzaklıkların belirlenmesinde herhangi bir
+uzaklık bağıntısı kullanılabilir. Sınıflandırma yapılırken veri tabanındaki her bir kaydın diğer
+kayıtlara olan uzaklığı hesaplanır.<br><br>
+**Algoritma 2.** *k-nn algoritmasının sözde kodu [3]*
+```
+1. Başla
+2. Veri setinin tanımlanması: probleme ait n-adet örnek gözlemleri içeren ve problem
+uzayını temsil etme kabiliyeti yüksek (gözlem uzayını homojen olarak
+örnekleyen) X veri setini oluştur.
+3. Uzaklık bağıntısının belirlenmesi: gözlemler arasındaki uzaklıkların
+hesaplanmasında kullanılacak yöntemi belirle.
+4. k-değerinin belirlenmesi: gözlem sayısına ve veri setinin karakteristiğine bağlı
+olarak k-komşu sayısı için arama uzayının sınırlarını tanımla.
+5. for each kj
+      kj için sınıflandırma performansını SPkj = fk-nn(kj)
+      if (SPkj > SPkj-1)
+         k= kj
+      end if
+   end
+6. En iyi sınıflandırma performansı sağlayan k-değerini kaydet
+7. Sınıf etiketi belirlenecek olan q sorgu gözlemini tanımla
+8. for i=1:n
+      D[i]=q ile Xi arasındaki uzaklığı hesapla
+   end
+9. Xq[k]=D[i] uzaklık dizisinden q sorgu gözlemine en yakın k-adet gözlemi belirle
+10. Xq[k] gözlemlerinin sınıflarını dikkate alarak çoğunluk oylaması/ağırlıklı
+oylama yöntemi kullanarak q-gözleminin sınıfını belirle.
+11. Bitir
+```
