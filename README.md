@@ -182,3 +182,5 @@ olarak k-komşu sayısı için arama uzayının sınırlarını tanımla.
 oylama yöntemi kullanarak q-gözleminin sınıfını belirle.
 11. Bitir
 ```
+Klasik k-nn algoritmasında gözlemler arasındaki uzaklık hesabı öklit bağıntısı
+kullanılarak Eşitlik 1’de verildiği gibi hesaplanır [3].
