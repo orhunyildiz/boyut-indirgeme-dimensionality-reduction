@@ -116,4 +116,32 @@ sınıflandırma gibi problemleri çözümlemek için melez algoritmaların geli
 olarak optimizasyon problemlerinin çözümünde yaygın bir şekilde kullanılmaktadırlar.
 Maliyetleri azaltmanın ve verimliliği artırmanın kritik önem kazandığı çağımızda süreçleri ve
 sistemleri optimum şekilde modellemenin etkili yollarından biri olarak meta-sezgisel
-algoritmalara başvurulmaktadır.
+algoritmalara başvurulmaktadır.<br>
+   Enerji, inşaat, pazarlama, üretim, bilgi teknolojileri, havacılık ve uzay sanayii gibi birçok
+alanda binlerce sistem ve sürecin optimizasyonunda ve Endüstri 4.0 gibi modern otomasyon
+sistemlerinin ve uygulamalarının geliştirilmesinde meta-sezgisel optimizasyon tekniklerinden
+faydalanılmaktadır. Büyük ve karmaşık bir problem uzayında arama yapmanın etkili bir yolu
+MSA algoritmalarını kullanmaktır. MSA algoritmalarının doğadan kaynaklı bileşenlerinin
+yetenekleri ve özellikleri farklı olsa da bir meta-sezgisel arama süreci temel olarak aynı
+adımlardan oluşur. Bu adımlar Algoritma 1’de verilmektedir.<br><br>
+**Algoritma 1.** *Meta-sezgisel arama sürecinin temel adımları*
+```
+i) Problemin yaratılması (uygunluk fonksiyonunun, ceza fonksiyonunun tanımlanması)
+ii) Çözüm adayının tasarımı ve çözüm adayları topluluğunun yaratılması
+iii) Adayların uygunluk değerlerinin hesaplanması
+iv) İteratif süreç (buluşsal arama)
+   - Komşuluk Araması
+   - Çeşitliliğin Sağlanması
+   - Çözüm Adayı Setinin Güncellenmesi
+v) Sonlandırma kriteri sağlandı mı?
+   - Hayır (Adım iv'e dön)
+   - Evet (arama sürecini sonlandır ve en iyi çözüm adayını kaydet)
+```
+Algoritma 1’de verilen (i, ii, iii ve v) numaralı adımlar bütün MSA algoritmaları için
+aynıdır. (iv) numaralı adım ise tüm MSA için farklıdır. (iv) numaralı adımda arama
+algoritmasına özgü operatörler/işlemler uygulanmaktadır. Arama sürecinin başarısı bu
+operatörlerin yeteneklerine bağlıdır. (iv) numaralı adımda verilen çözüm adayları topluluğunun
+güncellenmesinde temel olarak iki farklı yöntem kullanılmaktadır. Bunlar çözüm adaylarının
+arama uzayına normal/gauss dağılımı ile yerleştirilmesi ve rastgele yerleştirilmesidir. MSA
+algoritmaları ile ilgili çalışmalar incelendiğinde bu dağılım tiplerinden biriyle algoritmaların
+geliştirildiği ve test edildiği görülmektedir.
