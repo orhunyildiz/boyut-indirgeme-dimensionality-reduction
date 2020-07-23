@@ -10,6 +10,7 @@
 3. [Yöntem](#yöntem)
    - [Meta-Sezgisel Arama Süreci](#meta-sezgisel-arama-süreci)
    - [k-nn Sınıflandırma Algoritması](#k-nn-sınıflandırma-algoritması)
+   - [AGDE Sezgisel Arama Algoritması](#agde-sezgisel-arama-süreci)
 
 # Özet
 
@@ -186,3 +187,64 @@ Klasik k-nn algoritmasında gözlemler arasındaki uzaklık hesabı öklit bağ�
 kullanılarak Eşitlik 1’de verildiği gibi hesaplanır [3].
 
 ![oklid_formula](/images/oklid_formul.png)
+
+Eşitlik 1’de sınıflandırma probleminin nitelik sayısı n-ile, X1 ve X2 gözlemleri ise <x11, x12, x13,
+...,x1n> ve <x21, x22, x23, ...,x2n> ile temsil edilmektedir. Buna göre uzaklık hesabında
+problemin niteliklerinin eşit derecede etkiye sahip olduğu görülmektedir. Bunun yanında her
+bir niteliğin alt ve üst sınır değerlerine bağlı olarak sayısal büyüklüklerinin de uzaklık hesabı
+üzerinde farklı bir etki yaratabileceği dikkate alınmalıdır. Bu durum niteliklerin birbirlerine
+baskınlık kurması olarak nitelendirilir. Baskınlık durumunu bertaraf etmek içi her bir niteliğin
+normalizasyonu [0, 1] arasında ölçeklendirilmesi mümkündür. Ancak bu durumda ise probleme
+ait niteliklerin, gözlemlerin sınıflandırılmasında eşit derecede etkiye sahip olmaları gibi bir
+durum ortaya çıkar. Örneğin bir müşteriye verilecek banka kredisi hesaplanırken kişinin
+mesleği, aylık geliri, kredi skoru, borcu, cinsiyeti, yaşı, yaşadığı şehir, varlıkları gibi bilgiler
+dikkate alınabilir. Ancak bu niteliklerin her biri kişiye verilecek kredinin miktarının
+belirlenmesinde farklı derecede öneme sahiptir. Dolayısıyla klasik k-nn algoritmasının işleyişi
+incelendiğinde, sınıflandırma sürecinde niteliklerin etkilerinin eşit olduğunun kabul edilmesi
+doğru ve etkili bir yaklaşım değildir. Bu nedenle niteliklerin önem/etki derecelerinin
+belirlenmesi için sezgisel arama algoritmalarının kullanıldığı yöntemler geliştirilmiştir. En iyi
+sınıflandırma performansının elde edildiği ağırlık değerlerinin arandığı bu yöntemler literatürde
+oldukça yaygın bir şekilde kullanılmaktadırlar. Takip eden bölümde, sezgisel sınıflandırma
+algoritmasının iki temel öğesinden biri olan meta-sezgisel arama algoritmalarının güncel bir
+örneği tanıtılmaktadır.
+   ## AGDE Sezgisel Arama Süreci
+   AGDE algoritması, popülasyon tabanlı sezgisel bir optimizasyon tekniği olmakla birlikte
+global çözümü bulma açısından basit ama aynı zamanda da güçlü bir tekniktir [15]. AGDE
+algoritmasının temeli DE (differential evolution) algoritmasına dayanmaktadır. DE algoritmasının [16] temeli ise genetik algoritmaya [10] dayanır. Algoritmanın adımları
+Algoritma 3’te verilmiştir.<br><br>
+**Algoritma 3.** *AGDE algoritmasının temel ddımları [15]*
+```
+i) Problemin yaratılması (uygunluk fonksiyonunun, ceza fonksiyonunun tanımlanması)
+ii) Çözüm adayının tasarımı ve çözüm adayları topluluğunun yaratılması
+iii) Çözüm adayların uygunluk değerlerinin hesaplanması
+iv) İteratif süreç (sonlandırma kritesi sağlanıncaya kadar devam et: amaç fonksiyonu azami
+değerlendirme sayısı)
+      - Seçim süreci: Popülasyondan r1 ≠ r2 ≠ r3 ≠ i olmak üzere üç çözüm
+adayını rastgele seç
+      - Mutasyon
+      - Çaprazlama
+v) Sonlandırma kriteri sağlandı mı?
+      - Hayır (Adım iv’e dön)
+      - Evet (Arama sürecini sonlandır ve en iyi çözüm adayını kaydet)
+```
+Algoritma 3’te verilen bilgilere göre DE algoritmasında arama süreci yaşam döngüsü
+seçim işlemi, çaprazlama ve mutasyon olmak üzere üç adımdan oluşur. AGDE algoritmasında
+da bu üç adım ortaktır fakat AGDE algoritmasının geliştirilmesinde çeşitlilik yeteneğinin
+iyileştirilmesine yönelik olarak yeni bir mutasyon tekniği önerilmiştir. Bu amaçla Algoritma
+3’te seçim sürecinde tanımlanan r1, r2 ve r3 çözüm adaylarının seçilme yöntemleri DE
+algoritmasından farklı şekilde uygulanmaktadır. Bu üç çözüm adayının seçilme süreci ve
+AGDE algoritmasında işlevleri hakkında detaylı bilgi almak için referans çalışma incelenebilir
+[15]. AGDE algoritmasında çalışılan ikinci konu ise arama sürecinde komşuluk araması ve
+çeşitlilik arasındaki dengenin sağlanması için yeni bir adaptasyon şemasının önerilmesidir.
+AGDE’nin arama performansı mutasyon ve çaprazlama operatörlerinin başarısına bağlıdır.
+Çaprazlama sürecinin etkisi ise çaprazlama oranına (CR) bağlıdır. CR’nin büyük olması arama
+sürecinde çeşitliliğe katkı sağlarken hassas aramayı ise engellemektedir. Bu durum genetik
+algoritma ve diferansiyel evrim algoritmasında da aynıdır. CR’nin küçük olması halinde ise
+komşuluk araması hassas bir şekilde yerine getirilmekte ancak bu defa da yerel çözüm
+tuzaklarına yakınsama problemi ortaya çıkabilmektedir. Bu nedenlerden ötürü, AGDE
+algoritmasında CR parametresinin problem tipine ve arama sürecinin gereksinimlerine bağlı
+olarak dinamik bir şekilde ayarlanması ihtiyacına yönelik çözüm geliştirilmiştir. Eşitlik 2’de
+çaprazlama oranının dinamik bir hale getirilmesi için jenerasyon sayısına bağlı olarak
+geliştirilmiş ve rastgeleliği içeren bir yöntem verilmektedir. AGDE algoritmasında çaprazlama
+oranı CR değerlerini üretmek için, önceden belirlenmiş bir aday havuzu kullanır. Bu havuzlar
+CR1 ∈ [0.05, 0.15]; CR2 ∈ [0.9, 0.1].
