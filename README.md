@@ -248,3 +248,5 @@ olarak dinamik bir şekilde ayarlanması ihtiyacına yönelik çözüm geliştir
 geliştirilmiş ve rastgeleliği içeren bir yöntem verilmektedir. AGDE algoritmasında çaprazlama
 oranı CR değerlerini üretmek için, önceden belirlenmiş bir aday havuzu kullanır. Bu havuzlar
 CR1 ∈ [0.05, 0.15]; CR2 ∈ [0.9, 0.1].
+
+![cr_formula](/images/cr_formula.png)
