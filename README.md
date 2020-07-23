@@ -11,6 +11,7 @@
    - [Meta-Sezgisel Arama Süreci](#meta-sezgisel-arama-süreci)
    - [k-nn Sınıflandırma Algoritması](#k-nn-sınıflandırma-algoritması)
    - [AGDE Sezgisel Arama Algoritması](#agde-sezgisel-arama-süreci)
+   - [Önerilen Yöntem: Sezgisel Boyut İndirgeme](#önerilen-yöntem)
 
 # Özet
 
@@ -250,3 +251,18 @@ oranı CR değerlerini üretmek için, önceden belirlenmiş bir aday havuzu kul
 CR1 ∈ [0.05, 0.15]; CR2 ∈ [0.9, 0.1].
 
 ![cr_formula](/images/cr_formula.png)
+
+Eşitlik 2’de verilen rand(0,1) ifadesi uniform dağılıma sahip random bir değer üretmek
+için ve p1 ve p2 ise çaprazlama oranı havuzundaki herhangi bir CR setinin seçilme olasılıklarını
+göstermektedir. Sonuç olarak AGDE algoritması geleneksel DE yönteminden farklı olarak
+çaprazlama oranının dinamik bir şekilde ayarlandığı yeni bir yöntemi uygulayarak daha etkili
+bir arama performansı sergilemektedir. Daha fazla bilgi edinmek için lütfen referans çalışmayı
+inceleyiniz [15].
+   ## Önerilen Yöntem
+   Sezgisel boyut indirgeme için geliştirilen AGDE-knn algoritmasının işleyişi Şekil 1’de
+verilmektedir. Buna göre sınıflandırma problemlerinde sezgisel boyut indirgeme süreci birkaç
+adımdan oluşmaktadır. Bu adımlar sırasıyla, probleme ait örnek bir veri setinin tanımlanması,
+veri seti için en uygun k-değerinin belirlenmesi, sezgisel sınıflandırma algoritması kullanılarak
+niteliklerin ağırlıklandırılması, boyut indirgeme için eşik değerlerin tanımlanması ve indirgeme
+işlemi sonrası sınıflandırma performansının test edilmesi şeklinde ifade edilebilir. Aşağıda
+sırasıyla Şekil 1’de verilen öğeler ve süreçler açıklanmaktadır.
