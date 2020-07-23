@@ -266,3 +266,5 @@ veri seti için en uygun k-değerinin belirlenmesi, sezgisel sınıflandırma al
 niteliklerin ağırlıklandırılması, boyut indirgeme için eşik değerlerin tanımlanması ve indirgeme
 işlemi sonrası sınıflandırma performansının test edilmesi şeklinde ifade edilebilir. Aşağıda
 sırasıyla Şekil 1’de verilen öğeler ve süreçler açıklanmaktadır.
+
+![uml-diagram](/images/uml-diagram.png)
