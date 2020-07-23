@@ -268,3 +268,96 @@ işlemi sonrası sınıflandırma performansının test edilmesi şeklinde ifade
 sırasıyla Şekil 1’de verilen öğeler ve süreçler açıklanmaktadır.
 
 ![uml-diagram](/images/uml-diagram.png)
+
+*Veri Tabanı Katmanı*
+Çalışmada dört farklı boyutta veri seti kullanılmaktadır. İlk olarak veri setleri incelenmekte,
+gerekli düzenlemeler yapılmaktadır. Yüklenen veri seti iki ayrı alt veri setine bölünmüştür:
+Eğitim seti ve test seti. Modelin eğitim setiyle eğitilmesi sağlanmakta ve test setiyle başarısı
+ölçülmektedir. Veri setlerinde toplam örnek sayısının yaklaşık olarak %70’i eğitim, %30’u test
+için kullanılmıştır.<br>
+*Uygulama Katmanı*
+**Optimum k değerini belirleme:** İlk olarak her bir veri seti k-nn algoritmasıyla tatbik
+edilmektedir. Klasik k-en yakın komşu algoritmasında niteliklerin problem üzerindeki etkileri
+aynı kabul edilmektedir. Optimum k-değerini belirleme modülünün sözde kodu Algoritma 4’te
+verilmiştir.<br><br>
+**Algoritma 4.** Optimum k-değeri belirlemenin sözde kodu
+```
+1. Başla
+2. k-değeri arama uzayı tanımlanır (k1,k2,.....).
+3. k-değeri arama uzayının alt ve üst sınırı tanımlanır [m,n].
+4. for i=m:n
+      ki – değeri ile k-nn sınıflandırıcı çalıştırılır.
+      H: Bulunan sınıflandırma hata değerleri kaydedilir.
+   end for
+5. sayac = 6 olarak tanımlanır.
+6. while (sayac > 6)
+      for i=m:n
+         if (Hi < Hi+1)
+            enKucukHata = Hi olarak seçilir.
+            sayac bir azaltılır (sayac = sayac -1).
+         else
+            sayac bir artırılır (sayac = sayac +1).
+         end if
+      end for
+   end while
+7. enKucukHata değeri elde edilirken kullanılan k değeri seçilir.
+8. Bitir.
+```
+k-nn algoritmasıyla niteliklerin henüz çıkarılmadığı, boyut azaltmanın henüz gerçekleşmediği
+klasik modelin sınıflandırma hata değerleri elde edilmektedir. Her bir veri setinde ilk olarak k
+değeri arama uzayı tanımlanır. Daha sonra k değeri arama uzayının alt ve üst sınırları tanımlanır.
+Alt sınırdan başlanarak k-değeri kullanılarak elde edilen hata değeri ile k-değerleri artırılıp
+bulunan hata değerleri birbiriyle karşılaştırılmaktadır. Bu döngü, bulunan en düşük hata
+değerinden sonraki 6 iterasyonda hata değerinde azalma olmadığı sürece devam etmektedir.
+Yani elde edilen hata değerinden sonraki 6 iterasyonda k-nn sınıflandırıcının performansı
+iyileşmediğinde, o hata değeri elde edilirken kullanılan k-değeri optimum k değeri olarak
+belirlenmektedir. Her bir veri seti için k-nn algoritmasının ideal k-değeri belirlendikten sonra
+niteliklerin ağırlıklandırılması işlemine geçilmektedir.<br>
+**AGDE-knn algoritması ile niteliklerin ağırlıklandırılması:** Sezgisel k-nn algoritması ile
+niteliklerin probleme etkisi incelenip buna göre ağırlıklandırılması işlemi yapılmaktadır. Bunun
+için meta-sezgisel arama algoritmalarından biri olan AGDE algoritması kullanılmaktadır.
+AGDE algoritmasında çözüm adayları problem niteliklerinin ağırlıklarıdır. Meta-sezgisel
+arama algoritmasının çözüm adayları 0 ile 1 arasında olacak şekilde kısıtlanmıştır. Yani ideal
+ağırlıklar 0 ile 1 arasında aranacaktır. Amaç fonksiyon ise sezgisel k-nn’dir. Ağırlıkların yani
+çözüm adayların uygunluk değerlerini ölçmek için hedef (amaç) fonksiyonundan dönen
+sınıflandırma hata değerine bakılmaktadır.<br><br>
+**Algoritma 5.** *AGDE-knn algoritması ile niteliklerin ağırlıklandırılmasının sözde kodu*
+```
+1. Başla
+2. P: Problemin n nitelikli ağırlık dizisini temsil eden çözüm adaylarından rastgele bir
+popülasyon oluşturulur
+3. for i=1:n
+      F: Her bir çözüm adayının ağırlık dizisini sezgisel k-nn’e göndererek uygunluk
+değeri (hata değeri) hesaplanır
+   end for
+4. //Arama süreci yaşam döngüsünün başlangıcı
+5. while (G1’den Gmax’a (maksimum uygunluk değerine) kadar git)
+      for i=1:n
+         Rastgele mutasyon faktörü üretilir
+         Üç tane vektör seçilir: bir tane rastgele (Xr), bir tane en iyi çözüm adayı (Xp_enİyi), bir tane en kötü çözüm adayı vektörü (Xp_enKötü)
+         D: Mutasyon noktası rastgele belirlenir
+         for j = 1:D
+            Çaprazlama yapılır
+            yeniÇözüm: Yeni çözüm adayı elde edilir
+         end for
+         if (F(yeniÇözüm) <= (F(Xp_enİyi))
+            Xp_enİyi = yeniÇözüm
+         else
+            Xi+1'e çaprazlama işlemi yapılır
+         end if
+      end for
+   Sonlandırma kriterine kadar yeni jenerasyon oluştur
+6. Bitir
+```
+Yani ağırlıklar k-nn algoritmasında kullanılıp k-nn’nin sınıflandırma hata değerini minimum
+yapan ağırlıkların aranması işlemi gerçekleşmektedir. İdeal çözüm adayların aranması işlemi
+sonlandırma kriteri tamamlanıncaya kadar devam eder.<br>
+**Eşik değere göre nitelik seçimi / boyut azaltma:** AGDE algoritmasının nitelikler için en
+uygun ağırlıkları arama işleminin sonlandırılmasından sonra problemin boyut azaltma/nitelik
+çıkarımı aşamasına geçilmektedir. Bu aşamada eşik değer kullanılır. 0 ile 1 arasında bulunan
+ağırlıklardan, eşik değerden düşük ağırlığa sahip nitelikler çıkarılmaktadır.<br>
+**Boyutu azaltılmış modelin performans ölçümü:** Niteliklerin çıkarılması işleminden sonra
+modelin sınıflandırma performansına bakılır. Klasik k-nn algoritması ve sezgisel k-nn
+algoritmalarının sınıflandırma hata değerlerine bakılmaktadır. Eğer bu performans hata
+değerleri, nitelik çıkarılmadan önceki modelin sınıflandırma hata değerlerinden düşükse yani
+sınıflandırma performansı düşmemiş hatta iyileşmişse başarı sağlanmış olacaktır.
