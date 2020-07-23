@@ -184,4 +184,5 @@ oylama yöntemi kullanarak q-gözleminin sınıfını belirle.
 ```
 Klasik k-nn algoritmasında gözlemler arasındaki uzaklık hesabı öklit bağıntısı
 kullanılarak Eşitlik 1’de verildiği gibi hesaplanır [3].
+
 ![oklid_formula](/images/oklid_formul.png)
