@@ -361,3 +361,126 @@ modelin sınıflandırma performansına bakılır. Klasik k-nn algoritması ve s
 algoritmalarının sınıflandırma hata değerlerine bakılmaktadır. Eğer bu performans hata
 değerleri, nitelik çıkarılmadan önceki modelin sınıflandırma hata değerlerinden düşükse yani
 sınıflandırma performansı düşmemiş hatta iyileşmişse başarı sağlanmış olacaktır.
+# Kaynaklar
+1. Kahraman, H. T., Bayindir, R., &amp; Sagiroglu, S. (2012). A new approach to predict the
+excitation current and parameter weightings of synchronous machines based on genetic
+algorithm-based k-NN estimator. Energy Conversion and Management, 64, 129-138.
+2. Kahraman, H. T. (2016). A novel and powerful hybrid classifier method: Development
+and testing of heuristic k-nn algorithm with fuzzy distance metric. Data &amp; Knowledge
+Engineering, 103, 44-59.
+3. Kahraman, H. T., Sagiroglu, S., &amp; Colak, I. (2013). The development of intuitive
+knowledge classifier and the modeling of domain dependent data. Knowledge-Based
+Systems, 37, 283-295.
+4. Yilmaz, C., Kahraman, H. T., &amp; Söyler, S. (2018). Passive mine detection and
+classification method based on hybrid model. IEEE Access, 6, 47870-47888.
+5. Cerrada, M., Aguilar, J., Altamiranda, J., &amp; Sánchez, R. V. (2019). A hybrid heuristic
+algorithm for evolving models in simultaneous scenarios of classification and clustering.
+Knowledge and Information Systems, 61(2), 755-798.
+6. Li, K., Cao, X., Ge, X., Wang, F., Lu, X., Shi, M., ... &amp; Chang, S. (2020). Meta-Heuristic
+Optimization Based Two-stage Residential Load Pattern Clustering Approach
+Considering Intracluster Compactness and Inter-cluster Separation. IEEE Transactions on
+Industry Applications.
+7. Yadav, M., &amp; Prakash, V. P. (2020). A Comparison of the Effectiveness of Two Novel
+Clustering-Based Heuristics for the p-Centre Problem. In Advances in Data and
+Information Sciences (pp. 247-255). Springer, Singapore.
+8. Zhou, Q., Benlic, U., Wu, Q., &amp; Hao, J. K. (2019). Heuristic search to the capacitated
+clustering problem. European Journal of Operational Research, 273(2), 464-487.
+9. Aljarah, I., Mafarja, M., Heidari, A. A., Faris, H., &amp; Mirjalili, S. (2020). Multi-verse
+optimizer: theory, literature review, and application in data clustering. In Nature-Inspired
+Optimizers (pp. 123-141). Springer, Cham.
+10. Booker, L. B., Goldberg, D. E., &amp; Holland, J. H. (1989). Classifier systems and genetic
+algorithms. Artificial intelligence, 40(1-3), 235-282.
+11. Ramos-Figueroa, O., Quiroz-Castellanos, M., Mezura-Montes, E., &amp; Schütze, O. (2020).
+Metaheuristics to solve grouping problems: A review and a case study. Swarm and
+Evolutionary Computation, 100643.
+12. Kulkarni, A. J., Singh, P. K., Satapathy, S. C., Kashan, A. H., &amp; Tai, K. (Eds.). (2019).
+Socio-cultural Inspired Metaheuristics (Vol. 828). Springer.
+13. Sibalija, T. V. (2019). Particle swarm optimisation in designing parameters of
+manufacturing processes: A review (2008–2018). Applied Soft Computing, 84, 105743.
+14. Fausto, F., Reyna-Orta, A., Cuevas, E., Andrade, Á. G., &amp; Perez-Cisneros, M. (2020).
+From ants to whales: metaheuristics for all tastes. Artificial Intelligence Review, 53(1),
+753-810.
+15. Lin, K. C., Zhang, K. Y., Huang, Y. H., Hung, J. C., &amp; Yen, N. (2016). Feature selection
+based on an improved cat swarm optimization algorithm for big data classification. The
+Journal of Supercomputing, 72(8), 3210-3221.
+16. Yusta, S. C. (2009). Different metaheuristic strategies to solve the feature selection
+problem. Pattern Recognition Letters, 30(5), 525-534.
+17. Ramos-Figueroa, O., Quiroz-Castellanos, M., Mezura-Montes, E., &amp; Schütze, O. (2020).
+Metaheuristics to solve grouping problems: A review and a case study. Swarm and
+Evolutionary Computation, 100643.
+18. Santhanam, T., &amp; Padmavathi, M. S. (2015). Application of K-means and genetic
+algorithms for dimension reduction by integrating SVM for diabetes diagnosis. Procedia
+Computer Science, 47, 76-83.
+19. Tran, B., Xue, B., &amp; Zhang, M. (2018). Variable-length particle swarm optimization for
+feature selection on high-dimensional classification. IEEE Transactions on Evolutionary
+Computation, 23(3), 473-487.
+20. Thangavel, K., &amp; Pethalakshmi, A. (2009). Dimensionality reduction based on rough set
+theory: A review. Applied Soft Computing, 9(1), 1-12.
+21. Dash, M., &amp; Liu, H. (1997). Feature selection for classification. Intelligent data analysis,
+1(3), 131-156.
+22. Kwak, N., &amp; Choi, C. H. (2002). Input feature selection for classification problems. IEEE
+transactions on neural networks, 13(1), 143-159.
+23. Tang, J., Alelyani, S., &amp; Liu, H. (2014). Feature selection for classification: A review.
+Data classification: Algorithms and applications, 37.
+24. Xue, B., Zhang, M., &amp; Browne, W. N. (2012). Particle swarm optimization for feature
+selection in classification: A multi-objective approach. IEEE transactions on cybernetics,
+43(6), 1656-1671.
+25. Inbarani, H. H., Bagyamathi, M., &amp; Azar, A. T. (2015). A novel hybrid feature selection
+method based on rough set and improved harmony search. Neural Computing and
+Applications, 26(8), 1859-1880.
+26. Rouhi, A., &amp; Nezamabadi-pour, H. (2017, March). A hybrid feature selection approach
+based on ensemble method for high-dimensional data. In 2017 2nd Conference on Swarm
+Intelligence and Evolutionary Computation (CSIEC) (pp. 16-20). IEEE.
+27. Abualigah, L. M., Khader, A. T., Al-Betar, M. A., &amp; Alomari, O. A. (2017). Text feature
+selection with a robust weight scheme and dynamic dimension reduction to text document
+clustering. Expert Systems with Applications, 84, 24-36.
+28. Storn, R., &amp; Price, K. (1997). Differential evolution–a simple and efficient heuristic for
+global optimization over continuous spaces. Journal of global optimization, 11(4), 341-359.
+29. Mohamed, A. W., &amp; Mohamed, A. K. (2019). Adaptive guided differential evolution
+algorithm with novel mutation for numerical optimization. International Journal of
+Machine Learning and Cybernetics, 10(2), 253-277.
+30. Balint Antal, Andras Hajdu: An ensemble-based system for automatic screening of
+diabetic retinopathy, Knowledge-Based Systems 60 (April 2014), 20-27.
+31. O.L. Mangasarian, W.N. Street and W.H. Wolberg. Breast cancer diagnosis and prognosis
+via linear programming. Operations Research, 43(4), pages 570-577, July-August 1995.
+32. R. Alizadehsani, J. Habibi, M. J. Hosseini, H. Mashayekhi, R. Boghrati, A.
+Ghandeharioun, et al., &#39;A data mining approach for diagnosis of coronary artery disease,&#39;
+Computer Methods and Programs in Biomedicine, vol. 111, pp. 52-61, 2013/07/01/ 2013.
+33. Johnson, B., 2013. High resolution urban land cover classification using a competitive
+multi-scale object-based approach. Remote Sensing Letters, 4 (2), 131-140.
+34. Arslan, F., &amp; KAHRAMAN, H. T. Yapay Zekâ Tabanlı Büyük Veri Yönetim
+Aracı. Journal of Investigations on Engineering and Technology, 2(1), 8-21.
+35. Yeşilbudak, M., Kahraman, H., &amp; Karacan, H. (2011). Veri madenciliğinde nesne
+yönelimli birleştirici hiyerarşik kümeleme modeli. Gazi Üniversitesi Mühendislik-
+Mimarlık Fakültesi Dergisi, 26(1).
+36. Adak, M. F., &amp; Yurtay, N. (2013). Gini Algoritmasını Kullanarak Karar Ağacı
+Oluşturmayı Sağlayan Bir Yazılımın Geliştirilmesi. Bilişim Teknolojileri Dergisi, 6(3), 1-6.
+37. Lezki, Ş. (2014). Çok Kriterli Karar Verme Problemlerinde Karar Ağacı Kullanımı.
+İktisadi Yenilik Dergisi, 2(1), 16-31.
+38. Tokgöz, B. (2017). “Iş Gereksinimi Odaklı Test Senaryoları Üretim Modeli”, Necmettin Erbakan Üniversitesi Fen Bilimleri Enstitüsü Yüksek Lisans Tezi, 8-13.
+39. Birbil, İ., &quot;Tahmin ve Çıkarım 4 - Boyut Küçültme&quot;,
+http://www.veridefteri.com/2018/06/19/tahmin-ve-cikarim-4-boyut-kucultme/ (Son erişim
+tarihi: 20.08. 2019)
+40. Şimşek, H.K., &quot;Boyut Azaltma: Temel Bileşen Analizi&quot;, https://medium.com/deep-
+learning-turkiye/boyut-azaltma-temel-bileşen-analizi-812fd2163bbf (Son erişim tarihi:
+20.08. 2019)
+41. Bingham, E., &amp; Mannila, H. (2001, August). Random projection in dimensionality
+reduction: applications to image and text data. In Proceedings of the seventh ACM
+SIGKDD international conference on Knowledge discovery and data mining (pp. 245-250). ACM.
+42. Holland, J.H., 1975. &quot;Adaptation in natural and artificial systems: An introductory
+analysis with applications to biology, control, and artificial intelligence&quot;. Q. Rev. Biol. 1,211. http://dx.doi.org/10.1086/418447.
+43. Kahraman, H. T., Aras, S., Sönmez, Y., Güvenç, U., &amp; Gedikli, E. Analysis, Test and
+Management of the Meta-Heuristic Searching Process: An Experimental Study on SOS.
+Politeknik Dergisi.
+44. Aras, S., Kahraman, H. T., Sönmez, Y., &amp; Güvenç, U. Meta-Sezgisel Arama
+Algoritmalarının Test Edilmesi İçin Yeni Yöntemlerin Geliştirilmesi. İleri Teknoloji
+Bilimleri Dergisi, 6(2), 1-8.
+45. Murty, K. G.(2003). Optimization Models For Decision Making, vol. 1, Internet Edition,
+Chapter1: Models for Decision Making, 1-18, 2003.
+46. Dosoglu, M. K., Guvenc, U., Duman, S., Sonmez, Y., &amp; Kahraman, H. T. Symbiotic
+organisms search optimization algorithm for economic/emission dispatch problem in
+power systems. Neural Computing and Applications, 29(3), 721-737, 2018.
+47. Baysal Y.A., Altaş İ.H., Gedikli E., &quot;Simbiyotik Organizmalar Arama Algoritması ile
+Dağıtım Şebekelerinde Güç Kayıplarının Azaltılması&quot;, Akıllı Sistemlerde Yenilikler ve
+Uygulamaları Sempozyumu (ASYU 2016), DÜZCE, TÜRKIYE, 29 Eylül - 1 Ekim 2016,
+ss.295-299.
