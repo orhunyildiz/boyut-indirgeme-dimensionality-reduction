@@ -12,6 +12,7 @@
    - [k-nn Sınıflandırma Algoritması](#k-nn-sınıflandırma-algoritması)
    - [AGDE Sezgisel Arama Algoritması](#agde-sezgisel-arama-süreci)
    - [Önerilen Yöntem: Sezgisel Boyut İndirgeme](#önerilen-yöntem)
+4. [Kaynaklar](#kaynaklar)
 
 # Özet
 
